@@ -1,0 +1,14 @@
+{
+  "name": "INLO.Core.Pooling",
+  "rootNamespace": "INLO.Core.Pooling",
+  "references": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

@@ -1,0 +1,19 @@
+{
+  "name": "INLO.Core.DataTable.Editor",
+  "rootNamespace": "INLO.Core.DataTable.Editor",
+  "references": [
+    "INLO.Core.DataTable",
+    "INLO.Core.EditorUI.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

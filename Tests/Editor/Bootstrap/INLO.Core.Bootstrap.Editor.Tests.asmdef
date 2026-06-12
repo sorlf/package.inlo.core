@@ -1,0 +1,14 @@
+{
+  "name": "INLO.Core.Bootstrap.Editor.Tests",
+  "references": [
+    "INLO.Core.Bootstrap.Editor",
+    "INLO.Core.UI"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}

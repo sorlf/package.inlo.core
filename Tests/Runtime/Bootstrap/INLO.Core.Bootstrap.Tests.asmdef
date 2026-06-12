@@ -1,0 +1,11 @@
+{
+  "name": "INLO.Core.Bootstrap.Tests",
+  "references": [
+    "INLO.Core.Bootstrap"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": []
+}

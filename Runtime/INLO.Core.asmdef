@@ -1,0 +1,19 @@
+{
+  "name": "INLO.Core",
+  "rootNamespace": "INLO.Core",
+  "references": [
+    "INLO.Core.Events",
+    "INLO.Core.DataTable",
+    "INLO.Core.Bootstrap",
+    "INLO.Core.UI"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

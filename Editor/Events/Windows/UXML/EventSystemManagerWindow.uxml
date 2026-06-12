@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="manager-root" class="inlo-window-root">
+        <!-- 1단계: 글로벌 헤더 영역 -->
+        <ui:VisualElement name="manager-header" class="inlo-card inlo-margin-bottom--8">
+            <ui:VisualElement class="inlo-row">
+                <ui:Label text="INLO Event System Manager" class="inlo-title" style="flex-grow: 1; margin-bottom: 0;" />
+                <ui:Label text="EVENT SYSTEM" class="inlo-badge inlo-badge--info" />
+                <ui:Label text="v2.0 통합본" class="inlo-badge inlo-badge--ok" />
+            </ui:VisualElement>
+            <ui:Label text="이벤트 채널 검색/생성(Embedded), 프로젝트 내 모든 사용처(Usage) 스캔, 실시간 상태 검사(Audit Hub) 및 그래프 연결성을 제공합니다." class="inlo-muted inlo-wrap" style="margin-top: 5px;" />
+        </ui:VisualElement>
+
+        <!-- 2단계: 탭 네비게이션 바 -->
+        <ui:VisualElement name="manager-tabs" class="inlo-row inlo-margin-bottom--8" style="padding-left: 2px;">
+            <ui:Button name="tab-browser" text="Channel Browser" class="inlo-button inlo-tab-button inlo-tab-button--selected" />
+            <ui:Button name="tab-audit" text="Audit Hub" class="inlo-button inlo-tab-button inlo-tab-button--idle" />
+            <ui:Button name="tab-graph" text="Dependency Graph" class="inlo-button inlo-tab-button inlo-tab-button--idle" />
+        </ui:VisualElement>
+
+        <!-- 3단계: 동적 패널 스왑 영역 -->
+        <ui:VisualElement name="manager-content-slot" class="inlo-card--grow" style="flex-grow: 1; min-height: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

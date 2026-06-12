@@ -1,0 +1,19 @@
+{
+  "name": "INLO.Core.Pooling.Editor",
+  "rootNamespace": "INLO.Core.Pooling.Editor",
+  "references": [
+    "INLO.Core.Pooling",
+    "INLO.Core.EditorUI.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

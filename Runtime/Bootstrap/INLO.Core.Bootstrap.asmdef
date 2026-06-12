@@ -1,0 +1,14 @@
+{
+  "name": "INLO.Core.Bootstrap",
+  "rootNamespace": "INLO.Core.Bootstrap",
+  "references": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

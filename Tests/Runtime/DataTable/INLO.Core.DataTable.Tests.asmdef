@@ -1,0 +1,11 @@
+{
+  "name": "INLO.Core.DataTable.Tests",
+  "references": [
+    "INLO.Core.DataTable"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": []
+}

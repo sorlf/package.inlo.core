@@ -1,0 +1,20 @@
+{
+  "name": "INLO.Core.Bootstrap.Editor",
+  "rootNamespace": "INLO.Core.Bootstrap.Editor",
+  "references": [
+    "INLO.Core.Bootstrap",
+    "INLO.Core.UI",
+    "INLO.Core.EditorUI.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

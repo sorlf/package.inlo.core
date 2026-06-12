@@ -1,0 +1,24 @@
+{
+  "name": "INLO.Core.Editor",
+  "rootNamespace": "INLO.Core.Editor",
+  "references": [
+    "INLO.Core",
+    "INLO.Core.Pooling",
+    "INLO.Core.Events.Editor",
+    "INLO.Core.DataTable.Editor",
+    "INLO.Core.Bootstrap.Editor",
+    "INLO.Core.Pooling.Editor",
+    "INLO.Core.EditorUI.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

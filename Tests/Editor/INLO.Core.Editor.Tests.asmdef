@@ -1,0 +1,16 @@
+{
+    "name": "INLO.Core.Editor.Tests",
+    "references": [
+        "INLO.Core.Editor",
+        "INLO.Core",
+        "INLO.Core.DataTable",
+        "INLO.Core.DataTable.Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

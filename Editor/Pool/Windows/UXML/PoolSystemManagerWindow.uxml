@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="manager-root" class="inlo-window-root">
+        <!-- 1단계: 글로벌 헤더 영역 -->
+        <ui:VisualElement name="manager-header" class="inlo-card inlo-margin-bottom--8">
+            <ui:VisualElement class="inlo-row">
+                <ui:Label text="INLO Pool System Manager" class="inlo-title" style="flex-grow: 1; margin-bottom: 0;" />
+                <ui:Label text="POOL SYSTEM" class="inlo-badge inlo-badge--info" />
+                <ui:Label text="v2.0 통합본" class="inlo-badge inlo-badge--ok" />
+            </ui:VisualElement>
+            <ui:Label text="데이터베이스 브라우징, 무결성 리포팅, 실시간 플레이모드 메모리 재사용 검사를 단일 워크스페이스에서 통합 관리합니다." class="inlo-muted inlo-wrap" style="margin-top: 5px;" />
+        </ui:VisualElement>
+
+        <!-- 2단계: 탭 네비게이션 바 -->
+        <ui:VisualElement name="manager-tabs" class="inlo-row inlo-margin-bottom--8" style="padding-left: 2px;">
+            <ui:Button name="tab-browser" text="Database Browser" class="inlo-button inlo-tab-button inlo-tab-button--selected" />
+            <ui:Button name="tab-validation" text="Validation &amp; Metrics" class="inlo-button inlo-tab-button inlo-tab-button--idle" />
+            <ui:Button name="tab-debug" text="Live Monitor" class="inlo-button inlo-tab-button inlo-tab-button--idle" />
+        </ui:VisualElement>
+
+        <!-- 3단계: 동적 패널 스왑 영역 -->
+        <ui:VisualElement name="manager-content-slot" class="inlo-card--grow" style="flex-grow: 1; min-height: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

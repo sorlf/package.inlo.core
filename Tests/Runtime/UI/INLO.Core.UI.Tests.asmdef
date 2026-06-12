@@ -1,0 +1,13 @@
+{
+  "name": "INLO.Core.UI.Tests",
+  "references": [
+    "INLO.Core.UI",
+    "INLO.Core.Events",
+    "INLO.Core.Bootstrap"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": []
+}

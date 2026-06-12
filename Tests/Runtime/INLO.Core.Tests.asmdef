@@ -1,0 +1,11 @@
+{
+    "name": "INLO.Core.Tests",
+    "references": [
+        "INLO.Core"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}

@@ -1,0 +1,13 @@
+{
+	"name": "com.inlo.core",
+	"displayName": "INLO Core",
+	"version": "0.1.0",
+	"description": "A foundation package for shared Unity systems.",
+	"unity": "6000.0",
+	"dependencies": {
+		"com.unity.test-framework": "1.6.0"
+	},
+	"author": {
+		"name": "inlo"
+	}
+}

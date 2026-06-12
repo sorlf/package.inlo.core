@@ -1,0 +1,852 @@
+/*
+ * InloWindowCommon.uss
+ *
+ * INLO Core - Editor Window 공통 시각 언어 (모듈 공용 단일 원천).
+ * Pool / Events 등 INLO Core의 Editor Window들이 함께 사용한다.
+ *
+ * [Designer Touch] 모던 샴페인 골드 & 차콜 블랙 조합 프리미엄 테마 리브랜딩.
+ * [USS Compatibility Patch] Unity 스타일 시트(USS) 파서에서 경고를 내는 border 단축 속성을
+ * border-width 및 border-color 등으로 정밀 쪼개기(분해) 적용하여 경고 로그를 완전히 제로화했습니다.
+ */
+
+/* ===== Palette & Design Tokens ===== */
+:root {
+    --inlo-window-bg: rgb(20, 20, 22);
+    --inlo-surface: rgb(28, 28, 30);
+    --inlo-surface-hover: rgb(36, 36, 40);
+    --inlo-surface-alt: rgb(34, 34, 37);
+    --inlo-border-color: rgb(52, 52, 56);
+    --inlo-border-hover: rgb(72, 72, 78);
+    
+    /* 샴페인 골드 메탈릭 톤 */
+    --inlo-accent: rgb(226, 185, 107);
+    --inlo-accent-hover: rgb(245, 213, 149);
+    --inlo-accent-active: rgb(196, 154, 74);
+    --inlo-accent-fg: rgb(16, 16, 18);
+    
+    /* 텍스트 컬러스케일 */
+    --inlo-text: rgb(235, 235, 240);
+    --inlo-text-muted: rgb(165, 165, 172);
+    --inlo-text-dim: rgb(115, 115, 122);
+    
+    /* 세만틱 틴트 컬러 */
+    --inlo-color-ok: hsl(140, 42%, 55%);
+    --inlo-color-warning: hsl(40, 68%, 56%);
+    --inlo-color-error: hsl(5, 72%, 62%);
+    --inlo-color-info: hsl(205, 80%, 62%);
+}
+
+/* ===== Window root ===== */
+.inlo-window-root {
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 12px;
+    background-color: var(--inlo-window-bg);
+    color: var(--inlo-text);
+}
+
+/* ===== Title ===== */
+.inlo-title {
+    margin-bottom: 8px;
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: var(--inlo-text);
+    letter-spacing: 0.5px;
+}
+
+/* ===== Generic horizontal row ===== */
+.inlo-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* ===== Toolbar ===== */
+.inlo-toolbar {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background-color: var(--inlo-surface);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 8px;
+}
+
+.inlo-toolbar-title {
+    margin-right: 12px;
+    font-size: 13px;
+    -unity-font-style: bold;
+    color: var(--inlo-text);
+}
+
+.inlo-toolbar-spacer {
+    flex-grow: 1;
+}
+
+/* ===== Buttons (Premium Retouched) ===== */
+.inlo-button {
+    margin-right: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+    -unity-font-style: bold;
+    background-color: var(--inlo-surface-alt);
+    color: var(--inlo-text);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 6px;
+}
+
+.inlo-button:hover {
+    background-color: var(--inlo-surface-hover);
+    border-color: var(--inlo-border-hover);
+    color: rgb(255, 255, 255);
+}
+
+.inlo-button--accent {
+    background-color: var(--inlo-accent);
+    border-color: var(--inlo-accent);
+    color: var(--inlo-accent-fg);
+}
+
+.inlo-button--accent:hover {
+    background-color: var(--inlo-accent-hover);
+    border-color: var(--inlo-accent-hover);
+    color: var(--inlo-accent-fg);
+}
+
+.inlo-button--danger {
+    background-color: rgba(231, 76, 60, 0.1);
+    border-color: rgb(231, 111, 102);
+    color: rgb(250, 200, 200);
+}
+
+.inlo-button--danger:hover {
+    background-color: rgba(231, 76, 60, 0.2);
+    border-color: rgb(240, 140, 130);
+    color: rgb(255, 255, 255);
+}
+
+.inlo-button-row {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.inlo-button-row--action {
+    justify-content: flex-start;
+}
+
+/* ===== Premium Navigation Tab ===== */
+.inlo-tab-button {
+    margin-right: 6px;
+    padding: 8px 16px;
+    font-size: 12px;
+    -unity-font-style: bold;
+    border-width: 0;
+    border-radius: 6px;
+}
+
+.inlo-tab-button--selected {
+    background-color: var(--inlo-accent);
+    color: var(--inlo-accent-fg);
+}
+
+.inlo-tab-button--selected:hover {
+    background-color: var(--inlo-accent-hover);
+    color: var(--inlo-accent-fg);
+}
+
+.inlo-tab-button--idle {
+    background-color: var(--inlo-surface-alt);
+    color: var(--inlo-text-muted);
+}
+
+.inlo-tab-button--idle:hover {
+    background-color: var(--inlo-surface-hover);
+    color: var(--inlo-text);
+}
+
+/* ===== Form field (Premium Search inputs) ===== */
+.inlo-field {
+    margin-right: 8px;
+}
+
+.inlo-field--grow {
+    flex-grow: 1;
+}
+
+/* ===== Summary bar / cards ===== */
+.inlo-summary {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.inlo-summary-label {
+    white-space: normal;
+    -unity-font-style: bold;
+}
+
+.inlo-summary-tile {
+    flex-grow: 1;
+    flex-shrink: 1; /* 오버플로우 방지 */
+    margin-right: 8px;
+    padding: 10px 12px;
+    background-color: var(--inlo-surface-alt);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 8px;
+}
+
+.inlo-summary-tile__content {
+    flex-direction: column;
+}
+
+.inlo-summary-tile__title {
+    font-size: 11px;
+    color: var(--inlo-text-muted);
+    -unity-font-style: bold;
+}
+
+.inlo-summary-tile__value {
+    font-size: 22px;
+    -unity-font-style: bold;
+    color: var(--inlo-text);
+}
+
+/* ===== Cards (Premium Design Grid) ===== */
+.inlo-card {
+    flex-shrink: 1; /* 오버플로우 방지 (0 -> 1 대폭 개정) */
+    flex-direction: column;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding: 12px 16px;
+    background-color: var(--inlo-surface);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 8px;
+}
+
+.inlo-card--row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.inlo-card--grow {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 0;
+}
+
+/* 세만틱 왼쪽 엑센트 테두리 규칙 (디자이너 스타일링) */
+.inlo-card--accent {
+    border-left-width: 4px;
+    border-left-color: var(--inlo-accent);
+}
+
+.inlo-card--ok {
+    border-left-width: 4px;
+    border-left-color: rgb(82, 196, 124);
+    background-color: rgba(46, 204, 113, 0.04);
+}
+
+.inlo-card--warning {
+    border-left-width: 4px;
+    border-left-color: var(--inlo-accent);
+    background-color: rgba(241, 196, 15, 0.03);
+}
+
+.inlo-card--error {
+    border-left-width: 4px;
+    border-left-color: rgb(231, 111, 102);
+    background-color: rgba(231, 76, 60, 0.04);
+}
+
+.inlo-card--info {
+    border-left-width: 4px;
+    border-left-color: rgb(107, 185, 240);
+    background-color: rgba(52, 152, 219, 0.04);
+}
+
+.inlo-card-title {
+    margin-bottom: 8px;
+    font-size: 13px;
+    -unity-font-style: bold;
+    color: var(--inlo-text);
+}
+
+.inlo-card-title--inline {
+    margin-bottom: 0;
+    margin-right: 12px;
+}
+
+.inlo-metric-value {
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: var(--inlo-text);
+}
+
+.inlo-wrap {
+    white-space: normal;
+}
+
+/* ===== Body / Sidebar Split (F-Pattern Grid) ===== */
+.inlo-body {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: row;
+    min-height: 0;
+    margin-top: 8px;
+}
+
+.inlo-sidebar {
+    width: 280px;
+    min-width: 260px;
+    max-width: 320px;
+    flex-shrink: 1; /* 오버플로우 방지 */
+    flex-direction: column;
+    margin-right: 10px;
+    min-height: 0;
+}
+
+.inlo-main-panel {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 0;
+    background-color: var(--inlo-surface-alt);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 8px;
+}
+
+.inlo-main-panel-content {
+    flex-direction: column;
+}
+
+.inlo-detail-card {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 340px;
+}
+
+.inlo-panel-header {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.inlo-panel-control {
+    margin-bottom: 8px;
+}
+
+.inlo-control-label {
+    margin-right: 12px;
+    -unity-font-style: bold;
+}
+
+.inlo-control-row {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(226, 185, 107, 0.06);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-left-width: 4px;
+    border-left-color: var(--inlo-accent);
+    border-radius: 6px;
+}
+
+.inlo-row-limit-field {
+    width: 210px;
+    margin-right: 8px;
+}
+
+.inlo-error-filter-field {
+    width: 240px;
+}
+
+.inlo-filtered-count {
+    margin-left: 8px;
+    -unity-font-style: bold;
+}
+
+/* ===== List (ScrollView Premium Look) ===== */
+.inlo-list {
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: var(--inlo-surface);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 8px;
+}
+
+/* ===== List Item (Excel Zebra Grid Sheet) ===== */
+.inlo-list-item {
+    flex-direction: row;
+    align-items: center;
+    min-height: 30px;
+    padding: 0; /* 각 셀 내부에서 패딩을 온전히 핸들링하도록 하여 세로 디바이더 연장 */
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(48, 48, 52);
+    border-left-width: 4px;
+    border-left-color: rgba(0, 0, 0, 0);
+    background-color: var(--inlo-surface);
+}
+
+.inlo-list-item:hover {
+    background-color: rgb(40, 40, 44); /* 마우스 호버 시 세련된 가로 행 오버레이 */
+}
+
+.inlo-list-item--header {
+    min-height: 32px;
+    background-color: rgb(34, 34, 38);
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(68, 68, 72); /* 엑셀 헤더식 하단 굵은 구분 장벽 */
+    -unity-font-style: bold;
+    color: var(--inlo-text);
+}
+
+.inlo-list-item--header:hover {
+    background-color: rgb(34, 34, 38); /* 헤더 호버 색상 방지 */
+}
+
+.inlo-list-item--alt {
+    background-color: var(--inlo-surface-alt); /* 교차 지브라 패턴 */
+}
+
+.inlo-list-item--selected {
+    background-color: rgba(226, 185, 107, 0.14);
+    border-left-color: var(--inlo-accent);
+}
+
+.inlo-list-item--ok {
+    border-left-color: rgb(82, 196, 124);
+}
+
+.inlo-list-item--warning {
+    border-left-color: var(--inlo-accent);
+    background-color: rgba(226, 185, 107, 0.05);
+}
+
+.inlo-list-item--error {
+    border-left-color: rgb(231, 111, 102);
+    background-color: rgba(231, 76, 60, 0.06);
+}
+
+/* ===== Cell Layout (Excel Sheet Grid Divider) ===== */
+.inlo-cell {
+    flex-shrink: 0; /* 표 열 폭이 축소 찌그러짐 되지 않도록 철저히 차단 */
+    overflow: hidden;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-right: 0;
+    -unity-text-align: middle-left;
+    border-right-width: 1px;
+    border-right-color: rgb(46, 46, 50); /* 정교한 엑셀 격자 세로 디바이더 */
+}
+
+.inlo-cell--header {
+    -unity-font-style: bold;
+    color: rgb(255, 255, 255);
+    border-right-width: 1px;
+    border-right-color: rgb(58, 58, 64); /* 헤더 세로 디바인더 강조 */
+}
+
+.inlo-cell--nowrap {
+    white-space: nowrap;
+}
+
+.inlo-cell-actions {
+    flex-shrink: 1;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inlo-cell--badges {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* ===== Badges (Chic Design) ===== */
+.inlo-badge {
+    margin-right: 6px;
+    padding: 3px 8px;
+    font-size: 10px;
+    white-space: nowrap;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    color: var(--inlo-accent);
+    border-width: 1px;
+    border-color: rgba(226, 185, 107, 0.3);
+    border-radius: 4px;
+    background-color: rgba(226, 185, 107, 0.08);
+}
+
+.inlo-badge--info {
+    color: rgb(107, 185, 240);
+    border-color: rgba(107, 185, 240, 0.3);
+    background-color: rgba(107, 185, 240, 0.1);
+}
+
+.inlo-badge--ok {
+    color: rgb(82, 196, 124);
+    border-color: rgba(82, 196, 124, 0.3);
+    background-color: rgba(82, 196, 124, 0.12);
+}
+
+.inlo-badge--warning {
+    color: var(--inlo-accent);
+    border-color: rgba(226, 185, 107, 0.3);
+    background-color: rgba(226, 185, 107, 0.08);
+}
+
+.inlo-badge--error {
+    color: rgb(231, 111, 102);
+    border-color: rgba(231, 111, 102, 0.3);
+    background-color: rgba(231, 111, 102, 0.15);
+}
+
+.inlo-muted {
+    color: var(--inlo-text-muted);
+}
+
+/* ===== List Card ===== */
+.inlo-list-card {
+    flex-direction: column;
+    flex-shrink: 1; /* 오버플로우 방지 */
+    justify-content: center;
+    margin-bottom: 6px;
+    padding: 10px 14px;
+    background-color: var(--inlo-surface-alt);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-left-width: 4px;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-radius: 6px;
+}
+
+.inlo-list-card--selected {
+    background-color: rgba(226, 185, 107, 0.12);
+    border-color: var(--inlo-accent);
+    border-left-color: var(--inlo-accent);
+}
+
+.inlo-list-card--ok {
+    border-left-color: rgb(82, 196, 124);
+}
+
+.inlo-list-card--warning {
+    border-left-color: var(--inlo-accent);
+}
+
+.inlo-list-card--error {
+    border-left-color: rgb(231, 111, 102);
+}
+
+.inlo-list-card--accent {
+    border-left-color: var(--inlo-accent);
+}
+
+.inlo-list-container {
+    flex-direction: column;
+}
+
+.inlo-list-card-button {
+    margin-bottom: 6px;
+    background-color: var(--inlo-surface-alt);
+    color: var(--inlo-text);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 6px;
+}
+
+.inlo-list-card-button--selected {
+    -unity-font-style: bold;
+    background-color: var(--inlo-accent);
+    color: var(--inlo-accent-fg);
+    border-color: var(--inlo-accent);
+}
+
+.inlo-badge-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* ===== Key-Value List ===== */
+.inlo-kv {
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgb(44, 44, 46);
+}
+
+.inlo-kv__key {
+    font-size: 11px;
+    -unity-font-style: bold;
+    margin-bottom: 3px;
+    color: var(--inlo-text-muted);
+}
+
+.inlo-kv__value {
+    font-size: 12px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    white-space: normal;
+    color: var(--inlo-text);
+}
+
+/* ===== Notice Box (Highlight) ===== */
+.inlo-notice {
+    margin-top: 8px;
+    padding: 8px 12px;
+    white-space: normal;
+    background-color: rgba(226, 185, 107, 0.08);
+    border-left-width: 4px;
+    border-left-color: var(--inlo-accent);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.inlo-notice--warning {
+    background-color: rgba(226, 185, 107, 0.08);
+    border-left-color: var(--inlo-accent);
+}
+
+.inlo-notice--ok {
+    background-color: rgba(46, 204, 113, 0.06);
+    border-left-color: rgb(82, 196, 124);
+}
+
+.inlo-notice--error {
+    background-color: rgba(231, 76, 60, 0.06);
+    border-left-color: rgb(231, 111, 102);
+}
+
+/* ===== Workflow Guide ===== */
+.inlo-workflow-step {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background-color: var(--inlo-surface-alt);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 6px;
+}
+
+.inlo-workflow-step__number {
+    width: 26px;
+    height: 22px;
+    margin-right: 10px;
+    background-color: var(--inlo-accent);
+    color: var(--inlo-accent-fg);
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    border-radius: 4px;
+}
+
+.inlo-workflow-step__text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    white-space: normal;
+    color: var(--inlo-text);
+}
+
+/* ===== Data Preview Table ===== */
+.inlo-preview-scroll {
+    height: 310px;
+    margin-top: 8px;
+    background-color: var(--inlo-surface);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 8px;
+}
+
+.inlo-preview-table {
+    flex-direction: column;
+}
+
+.inlo-error-scroll {
+    height: 300px;
+    background-color: var(--inlo-surface);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 8px;
+}
+
+.inlo-error-item {
+    margin: 6px;
+    padding: 8px 12px;
+    white-space: normal;
+    background-color: rgba(231, 76, 60, 0.06);
+    border-left-width: 4px;
+    border-left-color: rgb(231, 111, 102);
+    border-top-width: 1px;
+    border-top-color: var(--inlo-border-color);
+    border-bottom-width: 1px;
+    border-bottom-color: var(--inlo-border-color);
+    border-right-width: 1px;
+    border-right-color: var(--inlo-border-color);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.inlo-error-item__title {
+    margin-bottom: 3px;
+    -unity-font-style: bold;
+    color: var(--inlo-text);
+}
+
+.inlo-error-item__message {
+    white-space: normal;
+}
+
+/* ===== Empty State ===== */
+.inlo-empty {
+    margin: 8px 6px;
+    padding: 12px 16px;
+    white-space: normal;
+    color: var(--inlo-text-muted);
+    background-color: var(--inlo-surface);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 8px;
+}
+
+/* ===== Information Hierarchy Grid & Split Layout ===== */
+.inlo-split-container {
+    flex-grow: 1;
+    flex-shrink: 1; /* 오버플로우 방지 */
+    flex-direction: row;
+    min-height: 0;
+}
+
+.inlo-sidebar-left {
+    width: 350px;
+    min-width: 320px;
+    max-width: 420px;
+    flex-shrink: 1; /* 오버플로우 방지 */
+    margin-right: 12px;
+}
+
+.inlo-workspace-right {
+    flex-grow: 1;
+    flex-shrink: 1; /* 오버플로우 방지 */
+    min-width: 0;
+    flex-direction: column;
+}
+
+.inlo-dashboard-row {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.inlo-dashboard-card {
+    flex-grow: 1;
+    flex-shrink: 1; /* 오버플로우 방지 (0 -> 1 대폭 개정) */
+    min-width: 110px; /* 좁은 화면 최적화 */
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding: 12px;
+}
+
+/* 여백 유틸리티 */
+.inlo-margin-bottom--8 {
+    margin-bottom: 8px;
+}
+
+.inlo-margin-bottom--12 {
+    margin-bottom: 12px;
+}
+
+.inlo-margin-top--8 {
+    margin-top: 8px;
+}
+
+/* =========================================================================
+   [Designer Touch] Unity Built-in Elements Premium Style Override
+   에디터 내장 폼 컨트롤(TextField, Toggle, Scrollbar)의 투박함을 고급스럽게 개선합니다.
+   ========================================================================= */
+
+/* 1. TextField / Input Field Override */
+.unity-text-field__input {
+    background-color: var(--inlo-window-bg);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 5px;
+    padding: 4px 8px;
+    color: var(--inlo-text);
+}
+
+.unity-text-field__input:hover {
+    border-color: var(--inlo-border-hover);
+}
+
+.unity-text-field__input:focus {
+    border-color: var(--inlo-accent);
+}
+
+/* 2. Toggle Switch Override */
+.unity-toggle__checkmark {
+    background-color: var(--inlo-window-bg);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+}
+
+.unity-toggle__checkmark:hover {
+    border-color: var(--inlo-border-hover);
+}
+
+.unity-toggle:checked .unity-toggle__checkmark {
+    background-color: var(--inlo-accent);
+    border-color: var(--inlo-accent);
+    color: var(--inlo-accent-fg);
+}
+
+/* 3. Scroller / Scrollbar Custom Look */
+.unity-scroller {
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.unity-scroller__slider {
+    min-width: 6px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.unity-scroller .unity-slider__thumb {
+    background-color: rgb(64, 64, 66);
+    border-width: 0;
+    border-radius: 4px;
+}
+
+.unity-scroller .unity-slider__thumb:hover {
+    background-color: rgb(84, 84, 86);
+}
+
+.unity-scroller__btn {
+    display: none; /* 투박한 스크롤 화살표 제거 */
+}
+
+/* ===== Realtime Guide Label ===== */
+.inlo-guide-label {
+    font-size: 12px;
+    white-space: normal;
+    padding: 10px 14px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    border-radius: 6px;
+}

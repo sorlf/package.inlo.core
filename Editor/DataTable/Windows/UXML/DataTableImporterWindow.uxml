@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="data-table-manager-root" class="inlo-window-root">
+        <ui:VisualElement class="inlo-card inlo-card--accent">
+            <ui:Label text="INLO DataTable Importer" class="inlo-title"/>
+            <ui:Label text="Choose a source, select a DataTableAsset, and import usable data with one action." class="inlo-muted inlo-wrap"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="inlo-row inlo-margin-bottom--8">
+            <ui:Button name="tab-xlsx" text="XLSX Import" class="inlo-button inlo-tab-button inlo-tab-button--selected"/>
+            <ui:Button name="tab-google" text="Google Sheets" class="inlo-button inlo-tab-button inlo-tab-button--idle"/>
+            <ui:Button name="tab-management" text="Management" class="inlo-button inlo-tab-button inlo-tab-button--idle"/>
+            <ui:Label name="selected-table-label" class="inlo-muted"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="inlo-split-container">
+            <ui:VisualElement class="inlo-sidebar-left inlo-card">
+                <ui:Label text="DataTable Assets" class="inlo-card-title"/>
+                <ui:ScrollView class="inlo-list">
+                    <ui:VisualElement name="table-list-slot" class="inlo-list-container"/>
+                </ui:ScrollView>
+            </ui:VisualElement>
+            <ui:VisualElement name="manager-content-slot" class="inlo-workspace-right"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

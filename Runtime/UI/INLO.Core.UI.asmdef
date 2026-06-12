@@ -1,0 +1,17 @@
+{
+  "name": "INLO.Core.UI",
+  "rootNamespace": "INLO.Core.UI",
+  "references": [
+    "INLO.Core.Events",
+    "INLO.Core.Bootstrap"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

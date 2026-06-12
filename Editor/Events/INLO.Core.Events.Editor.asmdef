@@ -1,0 +1,19 @@
+{
+  "name": "INLO.Core.Events.Editor",
+  "rootNamespace": "INLO.Core.Events.Editor",
+  "references": [
+    "INLO.Core.Events",
+    "INLO.Core.EditorUI.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
