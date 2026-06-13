@@ -1,6 +1,6 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace INLO.Core.Editor.Events
+namespace INLO.Core.Events.Editor
 {
     public sealed class EventChannelUsageScanResult
     {

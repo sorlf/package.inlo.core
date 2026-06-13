@@ -1,8 +1,8 @@
-using INLO.Core.Events;
+﻿using INLO.Core.Events;
 using UnityEditor;
 using UnityEngine;
 
-namespace INLO.Core.Editor.Events
+namespace INLO.Core.Events.Editor
 {
     [CustomEditor(typeof(EventChannelBaseSO), true)]
     public class EventChannelBaseEditor : UnityEditor.Editor

@@ -1,10 +1,10 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using INLO.Core.EditorUI.Editor;
 
-namespace INLO.Core.Editor.Events
+namespace INLO.Core.Events.Editor
 {
     public sealed class EventAuditPanel : VisualElement
     {

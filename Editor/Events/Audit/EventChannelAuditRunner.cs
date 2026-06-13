@@ -1,7 +1,7 @@
-using INLO.Core.Events;
+﻿using INLO.Core.Events;
 using UnityEditor;
 
-namespace INLO.Core.Editor.Events
+namespace INLO.Core.Events.Editor
 {
     public static class EventChannelAuditRunner
     {

@@ -1,6 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace INLO.Core.Editor.Events
+namespace INLO.Core.Events.Editor
 {
     /// <summary>
     /// Detailed usage information for an EventChannel reference.

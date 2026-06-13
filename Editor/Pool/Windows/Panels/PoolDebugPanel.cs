@@ -21,7 +21,7 @@ namespace INLO.Core.Pooling.Editor
 
         private const float RefreshInterval = 0.5f;
 
-        private readonly PoolSystemManagerWindow _window;
+        private readonly IPoolWindow _window;
         private Toggle _autoRefreshToggle;
         private Toggle _showOnlyActiveToggle;
         private Toggle _showOnlyFullToggle;
@@ -38,7 +38,7 @@ namespace INLO.Core.Pooling.Editor
         private string _searchText = string.Empty;
         private bool _isListening;
 
-        public PoolDebugPanel(PoolSystemManagerWindow window)
+        public PoolDebugPanel(IPoolWindow window)
         {
             _window = window;
             BuildUI();

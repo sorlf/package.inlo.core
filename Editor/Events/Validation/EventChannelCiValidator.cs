@@ -1,15 +1,15 @@
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
 
-namespace INLO.Core.Editor.Events
+namespace INLO.Core.Events.Editor
 {
     /// <summary>
     /// Command-line and menu validation entry point for INLO EventChannel rules.
     ///
     /// Unity batch mode example:
-    /// Unity.exe -batchmode -quit -projectPath "<PROJECT_PATH>" -executeMethod INLO.Core.Editor.Events.EventChannelCiValidator.Run
+    /// Unity.exe -batchmode -quit -projectPath "<PROJECT_PATH>" -executeMethod INLO.Core.Events.Editor.EventChannelCiValidator.Run
     ///
     /// 이 검증기는 CI나 빌드 파이프라인에서 EventChannel 규칙 위반을 자동으로 잡기 위한 진입점입니다.
     /// </summary>

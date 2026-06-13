@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace INLO.Core.UI
@@ -12,13 +11,6 @@ namespace INLO.Core.UI
         [SerializeField] private Transform toastLayer;
         [SerializeField] private Transform tutorialLayer;
         [SerializeField] private Transform blockerLayer;
-
-        private readonly Dictionary<UiLayerId, Transform> _layers = new();
-
-        private void Awake()
-        {
-            Refresh();
-        }
 
         public void Configure(
             Transform hud = null,
@@ -34,26 +26,10 @@ namespace INLO.Core.UI
             toastLayer = toast;
             tutorialLayer = tutorial;
             blockerLayer = blocker;
-            Refresh();
-        }
-
-        public void Refresh()
-        {
-            _layers[UiLayerId.Hud] = hudLayer;
-            _layers[UiLayerId.Screen] = screenLayer;
-            _layers[UiLayerId.Popup] = popupLayer;
-            _layers[UiLayerId.Toast] = toastLayer;
-            _layers[UiLayerId.Tutorial] = tutorialLayer;
-            _layers[UiLayerId.Blocker] = blockerLayer;
         }
 
         public bool TryGetLayer(UiLayerId layerId, out Transform layer)
         {
-            if (_layers.TryGetValue(layerId, out layer) && layer != null)
-            {
-                return true;
-            }
-
             layer = GetSerializedLayer(layerId);
             return layer != null;
         }

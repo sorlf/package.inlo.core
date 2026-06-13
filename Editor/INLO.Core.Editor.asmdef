@@ -4,6 +4,10 @@
   "references": [
     "INLO.Core",
     "INLO.Core.Pooling",
+    "INLO.Core.DataTable",
+    "INLO.Core.Events",
+    "INLO.Core.UI",
+    "INLO.Core.Bootstrap",
     "INLO.Core.Events.Editor",
     "INLO.Core.DataTable.Editor",
     "INLO.Core.Bootstrap.Editor",

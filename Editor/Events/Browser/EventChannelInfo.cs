@@ -1,6 +1,6 @@
-using INLO.Core.Events;
+﻿using INLO.Core.Events;
 
-namespace INLO.Core.Editor.Events
+namespace INLO.Core.Events.Editor
 {
     public sealed class EventChannelInfo
     {

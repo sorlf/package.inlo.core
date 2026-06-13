@@ -33,7 +33,7 @@ namespace INLO.Core.Pooling.Editor
             }
         }
 
-        private readonly PoolSystemManagerWindow _window;
+        private readonly IPoolWindow _window;
         private ObjectField _sourceField;
         private TextField _searchField;
         private Toggle _errorsOnlyToggle;
@@ -46,7 +46,7 @@ namespace INLO.Core.Pooling.Editor
         private PoolDatabaseGroup _group;
         private string _searchText = string.Empty;
 
-        public PoolBrowserPanel(PoolSystemManagerWindow window)
+        public PoolBrowserPanel(IPoolWindow window)
         {
             _window = window;
             BuildUI();

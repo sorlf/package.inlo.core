@@ -1,0 +1,171 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="True">
+    <ui:Style src="project://database/Packages/com.inlo.core/Editor/EditorUI/USS/InloWindowCommon.uss" />
+    <ui:Style src="project://database/Packages/com.inlo.core/Editor/ControlCenter/USS/InloControlCenterWindow.uss" />
+
+    <ui:VisualElement name="control-center-root" class="inlo-window-root control-center-window">
+        <ui:VisualElement class="cc-layout-row">
+            <!-- 1. 좌측 메인 네비게이션 사이드바 -->
+            <ui:VisualElement class="cc-sidebar">
+                <!-- 사이드바 상단 헤더 로고 -->
+                <ui:VisualElement class="cc-sidebar-header">
+                    <ui:Label text="INLO CORE" class="cc-sidebar-title" />
+                    <ui:Label text="Control Center" class="cc-sidebar-subtitle" />
+                    <ui:VisualElement class="cc-divider" />
+                </ui:VisualElement>
+
+                <!-- 사이드바 메뉴 리스트 -->
+                <ui:ScrollView name="cc-sidebar-menu" class="cc-sidebar-menu">
+                    <ui:Button name="menu-dashboard" class="cc-menu-btn cc-menu-btn--selected">
+                        <ui:Label text="🏠" class="cc-menu-icon" />
+                        <ui:Label text="Dashboard" class="cc-menu-text" />
+                    </ui:Button>
+
+                    <ui:Button name="menu-pool" class="cc-menu-btn cc-menu-btn--idle">
+                        <ui:Label text="🔄" class="cc-menu-icon" />
+                        <ui:Label text="Pool Manager" class="cc-menu-text" />
+                    </ui:Button>
+
+                    <ui:Button name="menu-events" class="cc-menu-btn cc-menu-btn--idle">
+                        <ui:Label text="⚡" class="cc-menu-icon" />
+                        <ui:Label text="Event System" class="cc-menu-text" />
+                    </ui:Button>
+
+                    <ui:Button name="menu-datatable" class="cc-menu-btn cc-menu-btn--idle">
+                        <ui:Label text="📊" class="cc-menu-icon" />
+                        <ui:Label text="DataTable Importer" class="cc-menu-text" />
+                    </ui:Button>
+
+                    <ui:Button name="menu-control" class="cc-menu-btn cc-menu-btn--idle">
+                        <ui:Label text="🛡️" class="cc-menu-icon" />
+                        <ui:Label text="Control &amp; Audit" class="cc-menu-text" />
+                    </ui:Button>
+                </ui:ScrollView>
+
+                <!-- 사이드바 하단 정보 -->
+                <ui:VisualElement class="cc-sidebar-footer">
+                    <ui:VisualElement class="cc-divider cc-footer-divider" />
+                    <ui:Label text="Package Version v2.5.0" class="cc-footer-text" />
+                    <ui:Label text="Active Pipeline: UniversalRP" class="cc-footer-subtext" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- 2. 우측 동적 워크스페이스 패널 슬롯 -->
+            <ui:VisualElement name="workspace-panel-slot" class="cc-workspace">
+                <!-- 각 탭마다 개별 Container를 두어 상태를 완전 보존시킴 -->
+                
+                <!-- [Dashboard Panel] -->
+                <ui:VisualElement name="panel-dashboard" class="cc-panel cc-panel--active">
+                    <ui:VisualElement class="inlo-card cc-welcome-card">
+                        <ui:Label text="Welcome to INLO Core Workspace!" class="inlo-title cc-welcome-title" />
+                        <ui:Label text="유니티 패키지 최적화, 이벤트 통신 제어, 데이터 시트 연동을 위한 단일 통합 제어 센터입니다." class="inlo-muted inlo-wrap" />
+                    </ui:VisualElement>
+
+                    <!-- 카드 형태 대시보드 리포트 그리드 -->
+                    <ui:VisualElement class="cc-dashboard-grid">
+                        <ui:VisualElement class="inlo-card cc-grid-card">
+                            <ui:Label text="🔄 Object Pooling" class="inlo-card-title" />
+                            <ui:Label text="활성 및 대기 풀 인스턴스를 무결성 검증하고 수명을 오버플로 정책에 맞춤 제어합니다." class="inlo-muted inlo-wrap cc-card-body" />
+                            <ui:Button name="db-btn-pool" text="Go to Pool Manager" class="inlo-button inlo-button--primary" />
+                        </ui:VisualElement>
+
+                        <ui:VisualElement class="inlo-card cc-grid-card">
+                            <ui:Label text="⚡ Event Channels" class="inlo-card-title" />
+                            <ui:Label text="ScriptableObject 기반의 결합도 낮은 이벤트 송수신 흐름과 호출 의존성 그래프를 추적합니다." class="inlo-muted inlo-wrap cc-card-body" />
+                            <ui:Button name="db-btn-events" text="Go to Event System" class="inlo-button inlo-button--primary" />
+                        </ui:VisualElement>
+
+                        <ui:VisualElement class="inlo-card cc-grid-card">
+                            <ui:Label text="📊 DataTable Assets" class="inlo-card-title" />
+                            <ui:Label text="Excel(.xlsx) 및 Google Sheet 스프레드시트의 필드 데이터를 런타임 Strongly-typed 에셋으로 한 번에 패싱합니다." class="inlo-muted inlo-wrap cc-card-body" />
+                            <ui:Button name="db-btn-datatable" text="Go to DataTable Importer" class="inlo-button inlo-button--primary" />
+                        </ui:VisualElement>
+
+                        <ui:VisualElement class="inlo-card cc-grid-card">
+                            <ui:Label text="🛡️ Code Integrity Audit" class="inlo-card-title" />
+                            <ui:Label text="프로젝트 인코딩 규격(UTF-8 LF), 레거시 UI 타입 사용처 비사용 권장 및 빌드 무결성을 한 번에 스캔합니다." class="inlo-muted inlo-wrap cc-card-body" />
+                            <ui:Button name="db-btn-audit" text="Run convention audit" class="inlo-button inlo-button--primary" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- [Pool Manager Panel - Embeds the inner tabs directly] -->
+                <ui:VisualElement name="panel-pool" class="cc-panel cc-panel--inactive">
+                    <ui:VisualElement class="inlo-card inlo-margin-bottom--8">
+                        <ui:VisualElement class="inlo-row">
+                            <ui:Label text="Pool System Dashboard" class="inlo-title cc-panel-title-grow" />
+                            <ui:Label text="POOL MANAGER" class="inlo-badge inlo-badge--info" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="pool-tabs-bar" class="inlo-row inlo-margin-bottom--8 cc-tab-bar-pad">
+                        <ui:Button name="pool-tab-browser" text="Database Browser" class="inlo-button inlo-tab-button inlo-tab-button--selected" />
+                        <ui:Button name="pool-tab-validation" text="Validation &amp; Metrics" class="inlo-button inlo-tab-button inlo-tab-button--idle" />
+                        <ui:Button name="pool-tab-debug" text="Live Monitor" class="inlo-button inlo-tab-button inlo-tab-button--idle" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="pool-panel-slot" class="inlo-card--grow cc-panel-grow-slot" />
+                </ui:VisualElement>
+
+                <!-- [Event System Panel - Embeds the inner tabs directly] -->
+                <ui:VisualElement name="panel-events" class="cc-panel cc-panel--inactive">
+                    <ui:VisualElement class="inlo-card inlo-margin-bottom--8">
+                        <ui:VisualElement class="inlo-row">
+                            <ui:Label text="Event System Dashboard" class="inlo-title cc-panel-title-grow" />
+                            <ui:Label text="EVENT MANAGER" class="inlo-badge inlo-badge--info" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="events-tabs-bar" class="inlo-row inlo-margin-bottom--8 cc-tab-bar-pad">
+                        <ui:Button name="events-tab-browser" text="Channel Browser" class="inlo-button inlo-tab-button inlo-tab-button--selected" />
+                        <ui:Button name="events-tab-audit" text="Audit Hub" class="inlo-button inlo-tab-button inlo-tab-button--idle" />
+                        <ui:Button name="events-tab-graph" text="Dependency Graph" class="inlo-button inlo-tab-button inlo-tab-button--idle" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="events-panel-slot" class="inlo-card--grow cc-panel-grow-slot" />
+                </ui:VisualElement>
+
+                <!-- [DataTable Importer Panel - Dynamic embedded sidebar list layout] -->
+                <ui:VisualElement name="panel-datatable" class="cc-panel cc-panel--inactive cc-panel-datatable-layout">
+                    <ui:VisualElement class="inlo-sidebar-left inlo-card cc-dt-sidebar">
+                        <ui:Label text="DataTable Assets" class="inlo-card-title"/>
+                        <ui:ScrollView class="inlo-list">
+                            <ui:VisualElement name="cc-table-list-slot" class="inlo-list-container"/>
+                        </ui:ScrollView>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="cc-dt-main-content">
+                        <ui:VisualElement class="inlo-row inlo-margin-bottom--8">
+                            <ui:Button name="cc-dt-tab-xlsx" text="XLSX Import" class="inlo-button inlo-tab-button inlo-tab-button--selected cc-dt-btn-first" />
+                            <ui:Button name="cc-dt-tab-google" text="Google Sheets" class="inlo-button inlo-tab-button inlo-tab-button--idle"/>
+                            <ui:Button name="cc-dt-tab-management" text="Management" class="inlo-button inlo-tab-button inlo-tab-button--idle"/>
+                            <ui:Label name="cc-dt-selected-table-label" class="inlo-muted cc-dt-selected-label" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cc-dt-content-slot" class="inlo-workspace-right inlo-card--grow cc-panel-grow-slot" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- [Control & Audit Panel] -->
+                <ui:VisualElement name="panel-control" class="cc-panel cc-panel--inactive">
+                    <ui:VisualElement class="inlo-card inlo-margin-bottom--8">
+                        <ui:Label text="Project Maintenance &amp; Utility Hub" class="inlo-title" />
+                        <ui:Label text="통합 검증 스크립트 실행 및 에러 탐지를 중앙에서 제어합니다." class="inlo-muted inlo-wrap" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="inlo-split-container cc-panel-control-split">
+                        <ui:VisualElement class="inlo-sidebar-left inlo-card cc-panel-control-sidebar">
+                            <ui:Label text="Quick Actions" class="inlo-card-title" />
+                            <ui:Button name="util-btn-audit" text="Run Code Convention Audit" class="inlo-button inlo-button--accent inlo-margin-bottom--8" />
+                            <ui:Button name="util-btn-uibinding" text="Validate UI Scene Bindings" class="inlo-button inlo-margin-bottom--8" />
+                            <ui:Button name="util-btn-eventci" text="Run Event Release Build Check" class="inlo-button inlo-margin-bottom--8" />
+                            <ui:Button name="util-btn-poolkey" text="Auto-fill Missing PoolKeys" class="inlo-button inlo-margin-bottom--8" />
+                            <ui:Label text="코드 컨벤션 오딧 검사 결과가 오른쪽 로그 뷰어에 인터랙티브하게 표시됩니다." class="inlo-muted inlo-wrap cc-panel-control-desc" />
+                        </ui:VisualElement>
+
+                        <ui:VisualElement class="inlo-workspace-right inlo-card">
+                            <ui:Label text="Execution Logs" class="inlo-card-title" />
+                            <ui:ScrollView class="cc-log-viewer">
+                                <ui:Label name="cc-audit-results" text="No audit has been run in this session. Click one of the actions on the left." class="cc-log-text" />
+                            </ui:ScrollView>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

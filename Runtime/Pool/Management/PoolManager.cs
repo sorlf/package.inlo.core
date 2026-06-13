@@ -861,7 +861,14 @@ namespace INLO.Core.Pooling
         /// </summary>
         public static void CleanupInvalidReferences()
         {
-            ValidateRuntimeState();
+            if (_root == null && PoolsByPrefab.Count > 0)
+            {
+                ClearRuntimePoolsOnly();
+                return;
+            }
+
+            RemoveInvalidInstanceMappings();
+            RemoveInvalidPrefabMappings();
         }
 
         internal static void ResetStaticState()
@@ -940,11 +947,7 @@ namespace INLO.Core.Pooling
             if (_root == null && PoolsByPrefab.Count > 0)
             {
                 ClearRuntimePoolsOnly();
-                return;
             }
-
-            RemoveInvalidInstanceMappings();
-            RemoveInvalidPrefabMappings();
         }
 
         private static void RemoveInvalidInstanceMappings()

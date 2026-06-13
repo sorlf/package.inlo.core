@@ -2,13 +2,15 @@
 
 INLO Core is a Unity UPM package for shared runtime and editor systems used by INLO projects.
 
-Current modules:
+Current modules & tools:
 
-- Bootstrap
-- DataTable
-- Events
-- UI
-- Pooling
+- **Bootstrap**: project-neutral initialization and scene-transition extension contracts.
+- **DataTable**: Excel (.xlsx) / Google Sheets runtime generation and parsing.
+- **Events**: ScriptableObject EventChannel runtime and graph visibility.
+- **UI**: Additive UI scene binding and popup/toast services.
+- **Pooling**: GameObject pool configuration and runtime diagnostics.
+- **INLO Control Center (v2.5.0)**: Premium decoupled unified hub for all core package operations.
+- **INLO Inspector Kit**: Modern, attribute-driven inspector engine (`[InloButton]`, `[InloRequired]`) with Midnight Orchid (Dark) and Modern Lavender White (Light) themes.
 
 See [Package Manual](Documentation/com.inlo.core.md) for the package-level technical overview.
 

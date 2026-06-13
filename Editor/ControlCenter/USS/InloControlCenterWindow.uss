@@ -1,0 +1,415 @@
+/*
+ * InloControlCenterWindow.uss
+ * 
+ * INLO Core - Control Center 통합 제어 허브 전용 프리미엄 테마 USS 스타일시트.
+ */
+
+.control-center-window {
+    padding: 0; /* 사이드바를 밀착시키기 위해 루트 패딩 0 */
+}
+
+.cc-layout-row {
+    flex-grow: 1;
+    flex-direction: row;
+    height: 100%;
+}
+
+/* ===== Left Sidebar Layout ===== */
+.cc-sidebar {
+    width: 240px;
+    background-color: rgb(26, 26, 28);
+    border-right-width: 1px;
+    border-right-color: var(--inlo-border-color);
+    padding: 16px 12px;
+    flex-shrink: 0;
+    justify-content: space-between;
+}
+
+.cc-sidebar-header {
+    margin-bottom: 16px;
+    padding-left: 4px;
+}
+
+.cc-sidebar-title {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: var(--inlo-accent);
+    letter-spacing: 1.5px;
+    margin-bottom: 2px;
+}
+
+.cc-sidebar-subtitle {
+    font-size: 11px;
+    color: var(--inlo-text-muted);
+    letter-spacing: 0.5px;
+}
+
+.cc-divider {
+    height: 1px;
+    background-color: var(--inlo-border-color);
+    margin: 12px 0;
+}
+
+/* Sidebar Menu Button Styling */
+.cc-sidebar-menu {
+    flex-grow: 1;
+}
+
+.cc-menu-btn {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 14px;
+    margin: 4px 0;
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 6px;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    justify-content: flex-start;
+}
+
+.cc-menu-btn--idle:hover {
+    background-color: var(--inlo-surface-hover);
+}
+
+.cc-menu-btn--selected {
+    background-color: var(--inlo-accent);
+}
+
+.cc-menu-icon {
+    font-size: 14px;
+    margin-right: 12px;
+    color: var(--inlo-text);
+}
+
+.cc-menu-btn--selected .cc-menu-icon {
+    color: var(--inlo-accent-fg);
+}
+
+.cc-menu-text {
+    font-size: 12px;
+    color: var(--inlo-text);
+    -unity-font-style: normal;
+}
+
+.cc-menu-btn--selected .cc-menu-text {
+    color: var(--inlo-accent-fg);
+    -unity-font-style: bold;
+}
+
+/* Sidebar Footer */
+.cc-sidebar-footer {
+    padding-left: 4px;
+}
+
+.cc-footer-text {
+    font-size: 10px;
+    color: var(--inlo-text-dim);
+    margin-bottom: 1px;
+}
+
+.cc-footer-subtext {
+    font-size: 9px;
+    color: rgb(85, 85, 90);
+}
+
+/* ===== Right Workspace Layout ===== */
+.cc-workspace {
+    flex-grow: 1;
+    background-color: var(--inlo-window-bg);
+    padding: 16px;
+    min-height: 0;
+    min-width: 0;
+}
+
+/* Panel Switch States */
+.cc-panel {
+    flex-grow: 1;
+    min-height: 0;
+    min-width: 0;
+}
+
+.cc-panel--active {
+    display: flex;
+}
+
+.cc-panel--inactive {
+    display: none;
+}
+
+/* Dashboard welcome card */
+.cc-welcome-card {
+    padding: 24px;
+    border-left-width: 4px;
+    border-left-color: var(--inlo-accent);
+    margin-bottom: 16px;
+}
+
+/* Dashboard Grid */
+.cc-dashboard-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cc-grid-card {
+    width: 49%;
+    min-width: 320px;
+    padding: 18px;
+    margin-bottom: 16px;
+    background-color: var(--inlo-surface-alt);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 8px;
+    border-left-width: 4px;
+    border-left-color: var(--inlo-border-color);
+}
+
+.cc-grid-card:hover {
+    background-color: var(--inlo-surface-hover);
+    border-color: var(--inlo-border-hover);
+    border-left-color: var(--inlo-accent);
+}
+
+.cc-card-body {
+    margin-top: 6px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    min-height: 36px;
+}
+
+/* Control Hub Log Viewer */
+.cc-log-viewer {
+    flex-grow: 1;
+    background-color: rgb(15, 15, 16);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    border-radius: 4px;
+    padding: 12px;
+    min-height: 200px;
+}
+
+.cc-log-text {
+    font-size: 11px;
+    color: var(--inlo-text-muted);
+    white-space: normal;
+}
+
+/* ===== Inline Styles Replacement Classes ===== */
+.cc-footer-divider {
+    margin-bottom: 8px;
+}
+
+.cc-welcome-title {
+    font-size: 20px;
+    color: var(--inlo-accent);
+}
+
+.cc-panel-title-grow {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.cc-tab-bar-pad {
+    padding-left: 2px;
+}
+
+.cc-panel-grow-slot {
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.cc-panel-datatable-layout {
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.cc-dt-sidebar {
+    width: 240px;
+    margin-right: 8px;
+}
+
+.cc-dt-main-content {
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.cc-dt-btn-first {
+    margin-left: 0;
+}
+
+.cc-dt-selected-label {
+    margin-left: auto;
+    align-self: center;
+    font-size: 11px;
+}
+
+.cc-panel-control-split {
+    flex-grow: 1;
+}
+
+.cc-panel-control-sidebar {
+    width: 320px;
+    margin-right: 8px;
+}
+
+.cc-panel-control-desc {
+    margin-top: 15px;
+    font-size: 11px;
+}
+
+/* ===== AAA Grade UI Enhancements ===== */
+
+/* Menu Native Icons */
+.cc-menu-icon-element {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+/* Sidebar selected states for native icons */
+.cc-menu-btn--selected .cc-menu-icon-element {
+    /* Unity's built-in light icons color inversion can happen automatically, but we can tint if needed */
+}
+
+/* Dashboard KPI Blocks */
+.cc-kpi-row {
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+
+.cc-kpi-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-right: 6px;
+    -unity-font-style: bold;
+    border-width: 1px;
+}
+
+.cc-kpi-badge--info {
+    background-color: rgba(98, 178, 245, 0.08);
+    border-color: rgba(98, 178, 245, 0.2);
+    color: var(--inlo-color-info);
+}
+
+.cc-kpi-badge--ok {
+    background-color: rgba(85, 196, 120, 0.08);
+    border-color: rgba(85, 196, 120, 0.2);
+    color: var(--inlo-color-ok);
+}
+
+.cc-kpi-badge--warning {
+    background-color: rgba(226, 185, 107, 0.08);
+    border-color: rgba(226, 185, 107, 0.2);
+    color: var(--inlo-accent);
+}
+
+/* Diagnostics Console Custom Styles */
+.cc-console-header-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cc-console-title {
+    margin-bottom: 0;
+}
+
+.cc-console-filters {
+    flex-direction: row;
+}
+
+.cc-console-filter-btn {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-left: 6px;
+    background-color: rgb(34, 34, 37);
+    border-width: 1px;
+    border-color: var(--inlo-border-color);
+    color: var(--inlo-text-muted);
+    -unity-font-style: bold;
+}
+
+.cc-console-filter-btn:hover {
+    background-color: var(--inlo-surface-hover);
+    color: var(--inlo-text);
+}
+
+.cc-console-filter-btn--active {
+    background-color: var(--inlo-accent);
+    border-color: var(--inlo-accent-active);
+    color: var(--inlo-accent-fg);
+}
+
+.cc-console-filter-btn--active:hover {
+    background-color: var(--inlo-accent-hover);
+    color: var(--inlo-accent-fg);
+}
+
+/* Interactive Diagnostic Row */
+.cc-diag-row {
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    border-radius: 5px;
+    background-color: rgb(22, 22, 24);
+    border-width: 1px;
+    border-color: rgb(38, 38, 41);
+}
+
+.cc-diag-row:hover {
+    background-color: rgb(30, 32, 36);
+    border-color: var(--inlo-border-hover);
+}
+
+.cc-diag-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.cc-diag-msg {
+    font-size: 11px;
+    color: var(--inlo-text);
+    flex-grow: 1;
+    white-space: normal;
+}
+
+.cc-diag-path {
+    font-size: 10px;
+    color: var(--inlo-text-dim);
+    margin-left: 16px;
+    flex-shrink: 0;
+}
+
+.cc-diag-badge {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 9px;
+    margin-right: 10px;
+    -unity-font-style: bold;
+    flex-shrink: 0;
+}
+
+.cc-diag-badge--info {
+    background-color: rgba(98, 178, 245, 0.12);
+    color: var(--inlo-color-info);
+}
+
+.cc-diag-badge--warning {
+    background-color: rgba(226, 185, 107, 0.12);
+    color: var(--inlo-accent);
+}
+
+.cc-diag-badge--error {
+    background-color: rgba(235, 107, 107, 0.12);
+    color: var(--inlo-color-error);
+}
+
+

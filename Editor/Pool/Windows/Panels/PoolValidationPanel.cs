@@ -21,7 +21,7 @@ namespace INLO.Core.Pooling.Editor
             public int WarningCount;
         }
 
-        private readonly PoolSystemManagerWindow _window;
+        private readonly IPoolWindow _window;
         private TextField _searchField;
         private Toggle _errorsOnlyToggle;
         private Toggle _warningsOnlyToggle;
@@ -36,7 +36,7 @@ namespace INLO.Core.Pooling.Editor
         private readonly List<GroupReport> _reports = new();
         private string _searchText = string.Empty;
 
-        public PoolValidationPanel(PoolSystemManagerWindow window)
+        public PoolValidationPanel(IPoolWindow window)
         {
             _window = window;
             BuildUI();

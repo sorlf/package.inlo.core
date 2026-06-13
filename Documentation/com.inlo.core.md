@@ -2,13 +2,15 @@
 
 INLO Core is a Unity UPM package for shared systems that should stay reusable across INLO projects.
 
-The package currently contains five modules:
+The package currently contains the following core modules & tools:
 
-- DataTable: CSV-style table parsing, schema validation, typed row access, and Editor import foundations.
-- Events: ScriptableObject EventChannel runtime and Editor visibility tools.
-- Pooling: GameObject pool configuration, runtime pool management, validation, and Editor utilities.
-- Bootstrap: project-neutral initialization and scene-transition extension contracts.
-- UI: optional additive UI scene binding plus independent UI layers, safe-area fitting, popup service, and toast service.
+- **DataTable**: Excel (.xlsx) / Google Sheets table parsing, schema validation, typed row access, and Editor import foundations.
+- **Events**: ScriptableObject EventChannel runtime and Editor visibility/dependency graph tools.
+- **Pooling**: GameObject pool configuration, runtime pool management, validation, and Editor live-monitoring utilities.
+- **Bootstrap**: Project-neutral initialization and scene-transition extension contracts.
+- **UI**: Additive UI scene binding plus independent UI layers, safe-area fitting, popup service, and toast service.
+- **INLO Control Center (v2.5.0)**: Premium decoupled unified hub for all core package operations (Dashboard, Pooling, Events, DataTables, Diagnostics).
+- **INLO Inspector Kit**: Modern UI Toolkit attribute-driven inspector engine featuring `[InloButton]` and `[InloRequired]` with "Midnight Orchid" (Dark) and "Modern Lavender White" (Light) themes.
 
 This document is the package-level manual. Module-specific rules live in each module document.
 
@@ -64,6 +66,7 @@ EventChannel remains the default shared game-event communication pattern. Do not
 
 | Date | Reason |
 | --- | --- |
+| 2026-06-12 | Released INLO Control Center v2.5.0 and INLO Inspector Kit with custom Orchid and Lavender skin themes. |
 | 2026-06-06 | Simplified document structure to align with Single Source of Truth (SSOT). |
 | 2026-06-02 | Added Editor UI Toolkit standardization baseline for DataTable Importer Window. |
 | 2026-06-02 | Replaced Unity package template content with the INLO Core package manual. |

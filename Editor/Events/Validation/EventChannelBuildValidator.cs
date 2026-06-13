@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using INLO.Core.Events;
 using UnityEditor;
@@ -6,7 +6,7 @@ using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
-namespace INLO.Core.Editor.Events
+namespace INLO.Core.Events.Editor
 {
     public class EventChannelBuildValidator : IPreprocessBuildWithReport
     {

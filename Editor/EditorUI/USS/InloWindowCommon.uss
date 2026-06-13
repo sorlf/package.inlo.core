@@ -30,10 +30,10 @@
     --inlo-text-dim: rgb(115, 115, 122);
     
     /* 세만틱 틴트 컬러 */
-    --inlo-color-ok: hsl(140, 42%, 55%);
-    --inlo-color-warning: hsl(40, 68%, 56%);
-    --inlo-color-error: hsl(5, 72%, 62%);
-    --inlo-color-info: hsl(205, 80%, 62%);
+    --inlo-color-ok: rgb(92, 188, 125);
+    --inlo-color-warning: rgb(222, 171, 64);
+    --inlo-color-error: rgb(231, 111, 102);
+    --inlo-color-info: rgb(81, 172, 235);
 }
 
 /* ===== Window root ===== */
@@ -102,13 +102,13 @@
     color: rgb(255, 255, 255);
 }
 
-.inlo-button--accent {
+.inlo-button--accent, .inlo-button--primary {
     background-color: var(--inlo-accent);
     border-color: var(--inlo-accent);
     color: var(--inlo-accent-fg);
 }
 
-.inlo-button--accent:hover {
+.inlo-button--accent:hover, .inlo-button--primary:hover {
     background-color: var(--inlo-accent-hover);
     border-color: var(--inlo-accent-hover);
     color: var(--inlo-accent-fg);
@@ -141,31 +141,35 @@
 /* ===== Premium Navigation Tab ===== */
 .inlo-tab-button {
     margin-right: 6px;
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 6px 14px;
+    font-size: 11px;
     -unity-font-style: bold;
-    border-width: 0;
-    border-radius: 6px;
+    border-width: 1px;
+    border-radius: 4px;
 }
 
 .inlo-tab-button--selected {
-    background-color: var(--inlo-accent);
-    color: var(--inlo-accent-fg);
+    background-color: rgb(40, 40, 44);
+    color: var(--inlo-accent);
+    border-color: var(--inlo-accent);
 }
 
 .inlo-tab-button--selected:hover {
-    background-color: var(--inlo-accent-hover);
-    color: var(--inlo-accent-fg);
+    background-color: rgb(48, 48, 52);
+    color: var(--inlo-accent-hover);
+    border-color: var(--inlo-accent-hover);
 }
 
 .inlo-tab-button--idle {
-    background-color: var(--inlo-surface-alt);
+    background-color: rgb(24, 24, 26);
     color: var(--inlo-text-muted);
+    border-color: var(--inlo-border-color);
 }
 
 .inlo-tab-button--idle:hover {
     background-color: var(--inlo-surface-hover);
     color: var(--inlo-text);
+    border-color: var(--inlo-border-hover);
 }
 
 /* ===== Form field (Premium Search inputs) ===== */
@@ -561,17 +565,24 @@
 
 .inlo-list-card-button {
     margin-bottom: 6px;
-    background-color: var(--inlo-surface-alt);
-    color: var(--inlo-text);
+    padding: 10px 14px;
+    background-color: rgb(26, 26, 28);
+    color: var(--inlo-text-muted);
     border-width: 1px;
     border-color: var(--inlo-border-color);
     border-radius: 6px;
 }
 
+.inlo-list-card-button:hover {
+    background-color: rgb(34, 34, 38);
+    color: var(--inlo-text);
+    border-color: var(--inlo-border-hover);
+}
+
 .inlo-list-card-button--selected {
     -unity-font-style: bold;
-    background-color: var(--inlo-accent);
-    color: var(--inlo-accent-fg);
+    background-color: rgb(34, 34, 38);
+    color: var(--inlo-accent);
     border-color: var(--inlo-accent);
 }
 
@@ -585,7 +596,8 @@
     flex-direction: column;
     margin-bottom: 10px;
     padding-bottom: 8px;
-    border-bottom: 1px solid rgb(44, 44, 46);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(44, 44, 46);
 }
 
 .inlo-kv__key {

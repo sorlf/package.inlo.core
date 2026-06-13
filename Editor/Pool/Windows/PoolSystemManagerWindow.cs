@@ -5,7 +5,7 @@ using INLO.Core.EditorUI.Editor;
 
 namespace INLO.Core.Pooling.Editor
 {
-    public sealed class PoolSystemManagerWindow : InloBaseEditorWindow
+    public sealed class PoolSystemManagerWindow : InloBaseEditorWindow, IPoolWindow
     {
         protected override string UxmlPath => WindowUxmlPath;
         protected override string UssPath => CommonUssPath;

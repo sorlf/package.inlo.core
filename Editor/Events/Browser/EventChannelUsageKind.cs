@@ -1,4 +1,4 @@
-namespace INLO.Core.Editor.Events
+﻿namespace INLO.Core.Events.Editor
 {
     public enum EventChannelUsageKind
     {
