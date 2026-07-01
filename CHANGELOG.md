@@ -75,6 +75,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Replaced Unity package documentation template content with INLO Core documentation.
 - Removed unused template image documentation assets.
 - Moved DataTable Importer Window stable frame and reusable visual rules toward UXML/USS.
+- Clarified AI Editor-authoring workflow (Builder/Validator MenuItem pattern) in AI_COLLABORATION.md.
 
 ## [0.1.0] - 2026-05-31
 

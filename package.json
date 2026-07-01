@@ -1,7 +1,7 @@
 {
 	"name": "com.inlo.core",
 	"displayName": "INLO Core",
-	"version": "2.5.0",
+	"version": "2.5.1",
 	"description": "Premium foundation package for shared Unity systems. Includes Object Pooling, Event Channels, DataTable Importers, INLO Control Center and INLO Inspector Kit.",
 	"unity": "6000.0",
 	"dependencies": {

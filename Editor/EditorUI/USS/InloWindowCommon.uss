@@ -862,3 +862,80 @@
     -unity-font-style: bold;
     border-radius: 6px;
 }
+
+/* ===== INLO Inspector Kit Themes ===== */
+.inlo-theme-orchid-dark {
+    --inlo-surface: rgb(46, 42, 54); /* #2E2A36 */
+    --inlo-surface-alt: rgb(54, 50, 62);
+    --inlo-accent: rgb(195, 179, 229); /* #C3B3E5 */
+    --inlo-accent-hover: rgb(215, 199, 245);
+    --inlo-error-border: rgb(229, 115, 115); /* #E57373 */
+}
+
+.inlo-theme-orchid-light {
+    --inlo-window-bg: rgb(245, 244, 248);
+    --inlo-surface: rgb(241, 239, 245); /* #F1EFF5 */
+    --inlo-surface-alt: rgb(231, 229, 235);
+    --inlo-accent: rgb(74, 59, 104); /* #4A3B68 */
+    --inlo-accent-hover: rgb(94, 79, 124);
+    --inlo-text: rgb(30, 30, 35);
+    --inlo-text-muted: rgb(80, 80, 90);
+    --inlo-border-color: rgb(200, 200, 210);
+    --inlo-error-border: rgb(211, 47, 47); /* #D32F2F */
+}
+
+/* Button styling overrides within Inspector Kit */
+.inlo-theme-orchid-dark .inlo-button--accent,
+.inlo-theme-orchid-dark .inlo-inspector-btn {
+    background-color: rgb(108, 84, 156); /* #6C549C */
+    border-color: rgb(108, 84, 156);
+    color: rgb(255, 255, 255);
+}
+
+.inlo-theme-orchid-dark .inlo-button--accent:hover,
+.inlo-theme-orchid-dark .inlo-inspector-btn:hover {
+    background-color: rgb(128, 104, 176);
+    border-color: rgb(128, 104, 176);
+}
+
+.inlo-theme-orchid-light .inlo-button--accent,
+.inlo-theme-orchid-light .inlo-inspector-btn {
+    background-color: rgb(142, 113, 199); /* #8E71C7 */
+    border-color: rgb(142, 113, 199);
+    color: rgb(255, 255, 255);
+}
+
+.inlo-theme-orchid-light .inlo-button--accent:hover,
+.inlo-theme-orchid-light .inlo-inspector-btn:hover {
+    background-color: rgb(162, 133, 219);
+    border-color: rgb(162, 133, 219);
+}
+
+/* Error States */
+.inlo-field-error-state {
+    border-width: 1px;
+    border-color: var(--inlo-error-border);
+    border-radius: 4px;
+}
+
+/* Required field alert box styling */
+.inlo-required-alert {
+    background-color: rgba(229, 115, 115, 0.08);
+    border-left-width: 3px;
+    border-left-color: var(--inlo-error-border);
+    padding: 6px 12px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.inlo-theme-orchid-light .inlo-required-alert {
+    background-color: rgba(211, 47, 47, 0.05);
+}
+
+.inlo-required-alert-text {
+    font-size: 11px;
+    color: var(--inlo-error-border);
+    white-space: normal;
+}
+
